@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Stories List Template</title>
     <style>[v-cloak] { display: none; } img {max-width: 100%;}</style>
-    <link href = "style.css" rel="stylesheet">
+    <link href = "css/strategy-b.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -53,16 +53,19 @@
           <a class = "story-title" v-bind:href="story.url" >{{ story.title }}</a>
           <!-- </h1> -->
 
+          
+          <div class = "image-text">
+          <!-- Story image -->
+          <!-- you can uses figure tag to show that it is a visual representation for the information; you can also use figcaption tag if you have a caption for each image / caption -->
+          <img class = "story-image" v-bind:src="story.image">
+          
+          <div class = "text">
           <!-- Story description -->
           <p class = "story-description">{{ story.description }}</p>
           
           <!-- Story date -->
           <p class = "story-date">{{ story.date }}</p>
-          
-          <!-- Story image -->
-          <!-- you can uses figure tag to show that it is a visual representation for the information; you can also use figcaption tag if you have a caption for each image / caption -->
-          <img class = "story-image" v-bind:src="story.image">
-          
+
           <!-- Story content (truncated) -->
           <div class = "content">
           <span class = "story-content" v-html="story.content"></span>
@@ -71,6 +74,7 @@
           <!-- Story source (linked) -->
           <div class = "source">
           <a class = "story-source" v-bind:href="story.source.url">{{ story.source.name }}</a>
+          </div>
           </div>
 
         </article>   
