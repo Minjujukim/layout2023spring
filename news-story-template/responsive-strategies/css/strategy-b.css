@@ -51,14 +51,18 @@ p.story-description {
     font-size: 14px;
     color:rgb(70, 70, 70);
     margin-block-end: 0em;
-    margin-top:3px;
+    margin-top: 12px;
 
 }
 
 p.story-date {
     font-size: 14px;
     color:rgb(70, 70, 70);
+    /* margin-block-start: 0.8em; */
+
     margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
+
 
 
 
@@ -133,7 +137,6 @@ a.story-source:visited {
 
 @media (min-width: 720px) {
     
-
     .image-text {
         grid-template-columns: 5fr 3fr;
 
@@ -149,11 +152,14 @@ a.story-source:visited {
     }
 
     p.story-description {
-        font-size: 32px;
+        font-size: 12px;
 
     }
-
-   
-
-   
 }
+
+/* @media (min-width: 1440px) {
+    p.story-description {
+        font-size: 8px;
+
+    }
+} */
