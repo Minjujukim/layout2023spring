@@ -1,69 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masthead</title>
-    <link href = "style.css" rel = "stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="body.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <div class = "main">
-        <div class = "title-container">
-            <img src = "logo-1.png" alt = "logo-image" class = "logo">
-            <p class = "title-text">
-                The Accuratio
-            </p>
+    <div class="main">
+        <div class="top">
+
+            <div class="title-container">
+                <div class="hamburger-menu">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+
+                    <ul class="menu__box">
+                        <li><a class="menu__item" href="#">World</a></li>
+                        <li><a class="menu__item" href="#">U.S.</a></li>
+                        <li><a class="menu__item" href="#">Politics</a></li>
+                        <li><a class="menu__item" href="#">Business</a></li>
+                        <li><a class="menu__item" href="#">Opinion</a></li>
+                        <li><a class="menu__item" href="#">Climate</a></li>
+                        <li><a class="menu__item" href="#">Science</a></li>
+                        <li><a class="menu__item" href="#">Arts</a></li>
+                        <li><a class="menu__item" href="#">Image</a></li>
+                    </ul>
+                </div>
+
+                <p class="title-text">
+                    <img src="logo-1.png" alt="logo-image" class="logo">
+                    The Accuratio
+                </p>
+                <img src="glass.png" alt="magnifying glass" class="glass">
+            </div>
         </div>
-        <div class = "second-row">
-            <div class = "topic-container">
-            <p class = "topic">
-                World
-            </p>
-            <p class = "topic">
-                U.S.
-            </p>
-            <p class = "topic">
-                Politics
-            </p>
-            <p class = "topic">
-                Business
-            </p>
-            <p class = "topic">
-                Opinion
-            </p>
-            <p class = "topic">
-                Climate
-            </p>
-            <p class = "topic">
-                Science
-            </p>
-            <p class = "topic">
-                Arts
-            </p>
-            <p class = "topic">
-                Image
-            </p>
-        </div>
-            <div class = "right">
-                <img src = "glass.png" alt = "magnifying glass" class = "glass">
-    
-                <div class = "subs-container">
-                    <p class = "right-text">
+
+        <div class="second-row">
+            <div class="topic-container">
+                <p class="topic">
+                    World
+                </p>
+                <p class="topic">
+                    U.S.
+                </p>
+                <p class="topic">
+                    Politics
+                </p>
+                <p class="topic">
+                    Business
+                </p>
+                <p class="topic">
+                    Opinion
+                </p>
+                <p class="topic">
+                    Climate
+                </p>
+                <p class="topic">
+                    Science
+                </p>
+                <p class="topic">
+                    Arts
+                </p>
+                <p class="topic">
+                    Image
+                </p>
+                <div class="subs-container">
+                    <p class="right-text">
                         Subscribe
                     </p>
                 </div>
-                <div class = "log-in">
-                    <p class = "right-text">
+                <div class="log-in">
+                    <p class="right-text">
                         Log-in
                     </p>
                 </div>
             </div>
+
+            <div class="boxes">
+                <div class="subs-container">
+                    <p class="right-text">
+                        Subscribe
+                    </p>
+                </div>
+                <div class="log-in">
+                    <p class="right-text">
+                        Log-in
+                    </p>
+                </div>
+            </div>
+
         </div>
-        
     </div>
+
+
+    <div id="news-stories-list-template" v-cloak>
+
+        <!-- The Featured Story -->
+        <!-- <h1>Featured Story</h1>  -->
+        <div class="featured-story">
+
+            <div class="feature-container1">
+
+                <!-- Story image -->
+                <img class="feature-image" v-bind:src="featuredStory.image">
+
+
+                <div class="feature-container1-1">
+
+                    <!-- Story title (linked) -->
+                    <a a class="feature-title" v-bind:href="featuredStory.url">{{ featuredStory.title }}</a>
+
+                    <!-- Story source (linked) -->
+                    <div class="source"> <a class="feature-source" v-bind:href="featuredStory.source.url">{{
+                            featuredStory.source.name }}</a>
+
+                        <!-- Story date -->
+                        <p class="feature-date">{{ featuredStory.date }}</p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="feature-container2">
+
+
+                <!-- Story description -->
+                <p class="feature-description">{{ featuredStory.description }}</p>
+
+
+                <!-- Story content (truncated) -->
+                <div class="feature-content"><span v-html="featuredStory.content"></span></div>
+
+            </div>
+
+        </div>
+
+        <!-- Debugging info, you can comment this section out when you don't need it. -->
+        <pre>The featured story object: {{ featuredStory | json }}</pre>
+
+        <!-- Stories List -->
+        <!-- <h1>Other Stories</h1> -->
+        <ul class="story-list">
+            <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
+            <li class="story-in-stories" v-for="story in stories">
+
+                <article>
+
+                    <!-- Story title (linked) -->
+                    <!-- <h1> -->
+                    <a class="story-title" v-bind:href="story.url">{{ story.title }}</a>
+                    <!-- </h1> -->
+
+
+                    <div class="image-text">
+                        <!-- Story image -->
+                        <!-- you can uses figure tag to show that it is a visual representation for the information; you can also use figcaption tag if you have a caption for each image / caption -->
+                        <img class="story-image" v-bind:src="story.image">
+
+                        <div class="text">
+                            <!-- Story description -->
+                            <p class="story-description">{{ story.description }}</p>
+
+                            <!-- Story date -->
+                            <p class="story-date">{{ story.date }}</p>
+
+                            <!-- Story content (truncated) -->
+                            <div class="content">
+                                <span class="story-content" v-html="story.content"></span>
+                            </div>
+
+                            <!-- Story source (linked) -->
+                            <div class="source">
+                                <a class="story-source" v-bind:href="story.source.url">{{ story.source.name }}</a>
+                            </div>
+                        </div>
+
+                </article>
+
+            </li>
+        </ul>
+
+        <!-- Debugging info, you can comment this section out when you don't need it. -->
+        <pre>The stories array: {{ stories | json }}</pre>
+
+    </div>
+
+    <!-- These scripts load the Vue library, and the actual story content. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
+
+
+
+
+
 </body>
+
 </html>
