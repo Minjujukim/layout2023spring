@@ -15,6 +15,7 @@
         img {
             max-width: 100%;
         }
+        
     </style>
     <link href="css/stylesheet.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,11 +30,11 @@
         <div id="news-stories-list-template" v-cloak>
 
             <!-- The Featured Story -->
-            <h1>Featured Story</h1>
+            <!-- <h1>Featured Story</h1> -->
             <div class="featured-story">
                 <div class="feature-container1">
                     <!-- Story title (linked) -->
-                    <a a class="feature-title" v-bind:href="featuredStory.url">{{ featuredStory.title }}</a>
+                    <a a class="text-decoration-none fs-1" v-bind:href="featuredStory.url"><strong>{{ featuredStory.title }}</strong></a>
 
                     <!-- Story description -->
                     <p class="feature-description">{{ featuredStory.description }}</p>
@@ -42,7 +43,7 @@
                     <p class="feature-date">{{ featuredStory.date }}</p>
 
                     <!-- Story content (truncated) -->
-                    <div class="feature-content"><span v-html="featuredStory.content"></span></div>
+                    <div class="d-none"><span v-html="featuredStory.content"></span></div>
 
                     <!-- Story source (linked) -->
                     <div class="source"> <a class="feature-source" v-bind:href="featuredStory.source.url">{{
@@ -63,13 +64,17 @@
             <!-- <h1>Other Stories</h1> -->
             <ul class="row row-cols-3">
                 <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
-                <li class="list-unstyled col-12 col-lg-4 story-in-stories" v-for="story in stories">
+                <li class="list-unstyled col-12 col-lg-4 story-in-stories border border-dark-subtle rounded-1 card-body card p-3 h-100" v-for="story in stories" >
 
-                    <article>
+            
+
+                    <!-- <article> -->
+
+                    
 
                         <!-- Story title (linked) -->
                         <!-- <h1> -->
-                        <a class="story-title" v-bind:href="story.url">{{ story.title }}</a>
+                        <a class="text-decoration-none" v-bind:href="story.url"><strong>{{ story.title }}</strong></a>
                         <!-- </h1> -->
 
                         <!-- Story description -->
@@ -84,7 +89,7 @@
 
                         <!-- Story content (truncated) -->
                         <div class="content">
-                            <span class="story-content" v-html="story.content"></span>
+                            <span class="d-none" v-html="story.content"></span>
                         </div>
 
                         <!-- Story source (linked) -->

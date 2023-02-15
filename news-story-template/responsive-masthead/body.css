@@ -4,12 +4,16 @@
   
 }
 
+img {
+    width: 100%;
+}
+
 body {
     /* max-width: 360px; */
     /* margin-left: 8%;
     margin-right: 8%;
     margin-top: 4%; */
-    margin: 0;
+    /* margin: 0; */
 
     font-family: 'Sofia Sans', sans-serif;
 }
@@ -26,7 +30,8 @@ pre {
 }
 
 .feature-container1 {
-    display: flex;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
 }
 
 .feature-container1-1 {
