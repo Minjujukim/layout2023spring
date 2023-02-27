@@ -147,6 +147,14 @@ p.title-text {
         font-weight: 600;
     }
 
+    .source:hover{
+
+        color:  #D6CABC;
+        transition-duration: 0.2s;
+
+
+    }
+
     .bottom-bar {
         display: block;
         width: 90%;
@@ -176,6 +184,14 @@ p.title-text {
         width: 70%;
         margin: auto;
         margin-bottom: 10%;
+
+
+    }
+
+    li.story-in-stories:hover {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0px 4px 15px #D6CABC; */
+        
 
 
     }
@@ -240,18 +256,15 @@ p.title-text {
         
     }
     
-    .story-source a :hover {
+    /* .story-source a :hover {
         color: blue;
         
-    }
+    } */
     
     a.story-source:visited {
         /* text-decoration: none; */
         
     }
-
-
-
 
 
 
@@ -362,9 +375,9 @@ p.title-text {
 
     button.cta:hover {
         /* color:rgb(50, 50, 50); */
-        color: red;
-        background-color: red;
-        transition-duration: 0.4s;
+        /* color: red; */
+        background-color: #D6CABC;
+        transition-duration: 0.2s;
 
     }
 
@@ -447,7 +460,9 @@ p.title-text {
       }
       .menu__item:hover {
         background-color: #F1EFEB;
+        
       }
+    
 
 
 
@@ -525,10 +540,10 @@ p.title-text {
     }
 
 
-
-
-
 }
+
+
+
 
 
 @media (min-width: 480px) {
