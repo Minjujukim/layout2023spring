@@ -1,12 +1,14 @@
 body {
-    background-color: #7777;
+    background-color: #ffff;
 }
 
 .stopwatch {
+    display: none;
     position: relative;
     width: 300px;
     top: 50px;
     right: 50px;
+    left: 100px;
 }
 
 .stopwatch > * {
@@ -26,6 +28,14 @@ body {
 
 .rotated {
     transform: rotate(45deg);
+
+}
+
+#asset-image {
+    /* width: 1440px; */
+    width: 90%;
+    height: auto;
+    margin: auto;
 
 }
 
