@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+        
+    </style>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="mt-5">
+    <div class="container">
+    <div class = "my-5">
+    <p class = "h2">The Accuratio</p>
+
+    <ul class = "list-group list-group-horizontal">
+    <li class = "list-group-item">World</li>
+    <li class = "list-group-item">U.S.</li>
+    <li class = "list-group-item">Politics</li>
+    <li class = "list-group-item">Business</li>
+
+
+
+    </ul>
+    </div>
+        <div id="news-stories-list-template" v-cloak>
+
+            <!-- The Featured Story -->
+
+            <!-- <h1>Featured Story</h1> -->
+            <div class="d-lg-inline-flex d-sm-inline-block">
+                <div class="feature-container2">
+                    <!-- Story image -->
+                    <img class="col-lg-32 rounded-1 img-fluid" v-bind:src="featuredStory.image">
+                </div>
+                <div class="ms-5">
+                    <!-- Story title (linked) -->
+                    <a a class="text-decoration-none fs-2 ms-7 $gray-900" v-bind:href="featuredStory.url"><strong>{{ featuredStory.title }}</strong></a>
+
+                    <!-- Story description -->
+                    <p class="feature-description">{{ featuredStory.description }}</p>
+
+                    <!-- Story date -->
+                    <p class="feature-date">{{ featuredStory.date }}</p>
+
+                    <!-- Story content (truncated) -->
+                    <div class="d-none"><span v-html="featuredStory.content"></span></div>
+
+                    <!-- Story source (linked) -->
+                    <div class="source"> <a class="feature-source" v-bind:href="featuredStory.source.url">{{
+                            featuredStory.source.name }}</a>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- Debugging info, you can comment this section out when you don't need it. -->
+            <pre class="d-none">The featured story object: {{ featuredStory | json }}</pre>
+
+            <!-- Stories List -->
+            <!-- <h1>Other Stories</h1> -->
+            <ul class="mt-5 row ms-5 grid gap-3 row-gap-5">
+                <!-- row-cols-3 -->
+                <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
+                <li class="card list-unstyled col-12 col-lg-4 story-in-stories border border-dark-subtle card-body card p-3 rounded-1 h-100 p-2 g-col-6 d-flex justify-content-center" v-for="story in stories" style = "width: 18rem;">
+                <!-- card-body card p-3  -->
+
+            
+
+                    <!-- <article> -->
+
+                     <!-- Story image -->
+                        <!-- you can uses figure tag to show that it is a visual representation for the information; you can also use figcaption tag if you have a caption for each image / caption -->
+                        <img class="rounded-1" v-bind:src="story.image">
+
+                        <!-- Story title (linked) -->
+                        <!-- <h1> -->
+                        <div class = "card-body">
+                        <a class="text-decoration-none" v-bind:href="story.url"><strong>{{ story.title }}</strong></a>
+                        <!-- </h1> -->
+
+                        <!-- Story description -->
+                        <p class="story-description">{{story.description }}</p>
+
+                        <!-- Story date -->
+                        <p class="story-date">{{ story.date }}</p>
+
+                       
+
+                        <!-- Story content (truncated) -->
+                        <div class="content">
+                            <span class="d-none" v-html="story.content"></span>
+                        </div>
+
+                        <!-- Story source (linked) -->
+                        <div class="source">
+                            <a class="story-source" v-bind:href="story.source.url">{{ story.source.name }}</a>
+                        </div>
+                        </div>
+
+                    <!-- </article> -->
+
+                </li>
+            </ul>
+
+            <!-- Debugging info, you can comment this section out when you don't need it. -->
+            <pre class="d-none">The stories array: {{ stories | json }}</pre>
+
+        </div>
+
+        <!-- These scripts load the Vue library, and the actual story content. -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script
+            src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>

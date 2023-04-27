@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finished Template</title>
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main-1">
+        <div class="top">
+
+            <div class="title-container">
+                <!-- https://alvarotrigo.com/blog/hamburger-menu-css/ -->
+                <div class="hamburger-menu">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+
+                    <ul class="menu__box">
+                        <li><a class="menu__item" href="#">World</a></li>
+                        <li><a class="menu__item" href="#">U.S.</a></li>
+                        <li><a class="menu__item" href="#">Politics</a></li>
+                        <li><a class="menu__item" href="#">Business</a></li>
+                        <li><a class="menu__item" href="#">Opinion</a></li>
+                        <li><a class="menu__item" href="#">Climate</a></li>
+                        <li><a class="menu__item" href="#">Science</a></li>
+                        <li><a class="menu__item" href="#">Arts</a></li>
+                        <li><a class="menu__item" href="#">Image</a></li>
+                    </ul>
+                </div>
+
+                <p class="title-text">
+                    <img src="logo-1.png" alt="logo-image" class="logo">
+                    The Accuratio
+                </p>
+                <img src="glass.png" alt="magnifying glass" class="glass">
+            </div>
+        </div>
+
+        <div class="second-row">
+            <div class="topic-container">
+                <a href="#" class = "topic">World</a>
+           
+                <a href="#" class = "topic">U.S.</a>
+
+                <a href="#" class = "topic">Politics</a>
+              
+                <a href="#" class = "topic">Business</a>
+
+                <a href="#" class = "topic">Opinion</a>
+           
+                <a href="#" class = "topic">Climate</a>
+              
+                <a href="#" class = "topic">Science</a>
+           
+                <a href="#" class = "topic">Arts</a>
+               
+                <a href="#" class = "topic">Image</a>
+
+            
+                
+            </div>
+
+            <div class = "button-container">
+
+            <button type="button" class = "cta" onclick="alert('You are now subscribed to Accuratio!')">Subscribe</button>
+
+            <button type="button" class = "cta" onclick="alert('You are now logged-in to Accuratio!')">Log-in</button>
+
+             </div>
+
+           
+
+        </div>
+    </div>
+
+<div class = "main-2">
+    <div id="news-stories-list-template" v-cloak> 
+
+        <!-- The Featured Story -->
+        <h1>Featured Story</h1> 
+        <div class = "featured-story">
+
+            <!-- Story image -->
+            <img v-bind:src="featuredStory.image" class = "featured-img">
+
+
+            <div class = "feature-container">
+
+                <!-- Story title (linked) -->
+                <div class = "featured-title-container">
+                <a v-bind:href="featuredStory.url" class = "featured-title">{{ featuredStory.title }}</a>
+
+                </div>
+                
+                <div class = "featured-description-container">
+                <!-- Story description -->
+                <p class = "featured-description">
+                {{ featuredStory.description }}</p>
+                </div>
+
+                <!-- Story content (truncated) -->
+                <!-- <span v-html="featuredStory.content"></span> -->
+
+                <div class = "date-source-container">
+
+                <!-- Story date -->
+                <p class = "date">{{ featuredStory.date }} • </p>
+
+                <!-- Story source (linked) -->
+                <a class = "source" v-bind:href="featuredStory.source.url">{{ featuredStory.source.name }}</a>
+                </div>
+                <div class = "bottom-bar">
+                </div>
+
+            </div>
+
+        </div>
+  
+        <!-- Debugging info, you can comment this section out when you don't need it. -->
+        <pre>The featured story object: {{ featuredStory | json }}</pre>
+  
+        <!-- Stories List -->
+        <!-- <h1>Other Stories</h1> -->
+        <ul class = "story-list">
+          <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
+          <li class = "story-in-stories" v-for="story in stories">
+  
+          <article>
+  
+            <!-- Story title (linked) -->
+            <!-- <h1> -->
+            <a class = "story-title" v-bind:href="story.url" >{{ story.title }}</a>
+            <!-- </h1> -->
+
+            <!-- Story image -->
+            <!-- you can uses figure tag to show that it is a visual representation for the information; you can also use figcaption tag if you have a caption for each image / caption -->
+
+            <div class = "image-description">
+            <img class = "story-image" v-bind:src="story.image">
+  
+            <!-- Story description -->
+            <p class = "story-description">{{ story.description }}</p>
+
+            </div>
+            
+           
+            
+            
+            
+            <!-- Story content (truncated) -->
+            <div class = "content">
+            <span class = "story-content" v-html="story.content"></span>
+            </div>
+
+            <div class = "date-source-container-2">
+
+             <!-- Story date -->
+            <p class = "date">{{ story.date }} • </p>
+            
+            <!-- Story source (linked) -->
+            
+            <a class = "source" v-bind:href="story.source.url">{{ story.source.name }}</a>
+            
+
+            </div>
+  
+          </article>   
+  
+          </li>
+        </ul>
+  
+        <!-- Debugging info, you can comment this section out when you don't need it. -->
+        <pre>The stories array: {{ stories | json }}</pre>
+      
+    </div>
+
+</div>
+
+    <footer>
+    <div class = "footer-bottom">
+
+    <div class = "rights-container">
+    <a href = "https://gnews.io/" class = "api-credit">© 2023 GNews API. All Rights Reserved.</a>
+
+    </div>
+   
+
+    <div class = "privacy-container">
+
+    <a href = "#" class = "privacy-text">Terms of Use</a>
+    <a href = "#" class = "privacy-text">|</a>
+    <a href = "#" class = "privacy-text">Privacy Policy</a>
+        <a href = "#" class = "privacy-text">|</a>
+
+    <a href = "#" class = "privacy-text">Help</a>
+        <a href = "#" class = "privacy-text">|</a>
+
+    <a href = "#" class = "privacy-text">Contact Us</a>
+
+    </div>
+
+    <div class = "sns-container">
+     <a href = "#" class = "sns-text">FACEBOOK</a>
+     <!-- <a href = "#" class = "sns-text"> • </a> -->
+     <a href = "#" class = "sns-text">INSTAGRAM</a>
+          <!-- <a href = "#" class = "sns-text"> • </a> -->
+
+     <a href = "#" class = "sns-text">TWITTER</a>
+          <!-- <a href = "#" class = "sns-text"> • </a> -->
+
+     <a href = "#" class = "sns-text">YOUTUBE</a>
+
+    </div>
+
+    <p class = "design-credit"> Layout Designed by Minju Kim</p>
+     </footer>
+  
+      <!-- These scripts load the Vue library, and the actual story content. -->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
+      
+</body>
+</html>

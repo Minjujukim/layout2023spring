@@ -1,0 +1,52 @@
+body {
+    background-color: #ffff;
+}
+
+.stopwatch {
+    display: none;
+    position: relative;
+    width: 300px;
+    top: 50px;
+    right: 50px;
+    left: 100px;
+}
+
+.stopwatch > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.stopwatch-needle {
+    transform-origin: 50%
+}
+
+.stopwatch.running .stopwatch-needle {
+    animation: needle-roate 60s linear infinite;
+}
+
+.rotated {
+    transform: rotate(45deg);
+
+}
+
+#asset-image {
+    /* width: 1440px; */
+    width: 90%;
+    height: auto;
+    margin: auto;
+
+}
+
+@keyframes needle-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
